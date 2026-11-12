@@ -1,0 +1,14 @@
+শুধু Android ফোন দিয়ে APK বানানোর নিয়ম (GitHub Actions)
+
+১) GitHub-এ নিজের অ্যাকাউন্টে নতুন Public repository তৈরি করুন। নাম দিন AmarHisabAndroid।
+২) এই ZIP Extract করে AmarHisabAndroid ফোল্ডারের ভেতরের সব ফাইল ও .github ফোল্ডারসহ repository-তে আপলোড করুন। ZIP ফাইলটিকে সরাসরি repository-তে আপলোড করবেন না; Extract করা ফাইলগুলো আপলোড করতে হবে।
+৩) GitHub repository-তে Actions ট্যাব খুলুন। “Build AmarHisab APK” workflow দেখা গেলে সেটি নির্বাচন করুন।
+৪) Run workflow চাপুন। Build শেষ হওয়া পর্যন্ত অপেক্ষা করুন।
+৫) সবুজ টিক এলে ওই run খুলে নিচের Artifacts অংশ থেকে AmarHisab-debug-apk ডাউনলোড করুন।
+৬) ZIP artifact Extract করলে app-debug.apk পাবেন। সেটি Android-এ ইনস্টল করুন। প্রয়োজনে Settings থেকে এই ফাইল ম্যানেজার/ব্রাউজারের জন্য “Install unknown apps” অনুমতি দিন।
+
+নিরাপত্তা:
+- ZipToApk বা অন্য তৃতীয় পক্ষকে GitHub-এর private repositories/Workflow-এ পূর্ণ অনুমতি দেবেন না।
+- এই পদ্ধতিতে তৃতীয় পক্ষের OAuth অ্যাপ লাগে না; GitHub-এর নিজস্ব Actions চলে।
+- Public repository করলে সোর্স কোড সবার দেখা যাবে। ব্যক্তিগত রাখতে চাইলে Private repository ব্যবহার করুন; GitHub Actions private repo-তেও কাজ করে, তবে আপনার অ্যাকাউন্টের Actions quota/নীতি প্রযোজ্য।
+- APKটি debug APK; ব্যক্তিগতভাবে পরীক্ষা/ইনস্টল করার জন্য। Play Store-এ প্রকাশের জন্য signed release build দরকার।
